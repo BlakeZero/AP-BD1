@@ -1,15 +1,15 @@
 /* Tabela Cliente */
 insert into cliente(nome, cpf, data_nasc, email, telefone) values 
-('Álvaro dos Santos', 46265824865, '1993-12-5', 'alvarinho_chama@gmail.com','(18) 99858-1665'),
-('Victor Hugo Mazzarotti', 77868631228, '1981-06-26', 'vitao_mazza81@yahoo.com.br', '(31) 98731-6687'),
-('Roseli Ganzerousi', 15893014833, '1988-02-13', 'roseli.ganzer@hotmail.com', '(41) 93683-7673'),
-('James Campos', 82569664441, '1973-08-03', 'james_dometal@gmail.com', '(11) 91286-7411'),
-('Antônio Pimentel', 18942535517, '1992-11-01', 'toninho.picante@hotmail.com', '(19) 99658-2578'),
-('David Mustafa', 77856811898, '1971-09-13', 'eusouodavi_59@gmail.com', '(11) 99244-5771'),
-('Alexandre Junior', 45917925013, '2001-07-29', 'ale_juninho69@outlook.com', '(69) 97472-1567'),
-('Bruno Henrique Baptista', 86376815898, '1995-03-15', 'bruno_baptistao95@yahoo.com.br', '(19) 99632-5862'),
-('Ana Letícia Machado', 29281349823, '1999-08-31', 'aninhamachado99@hotmail.com', '(44) 97678-8531'),
-('Renata Duarte', 70952309784, '1992-04-18', 'renataduarte92@hotmail.com', '(86) 93638-7721');
+('Álvaro dos Santos', '462.658.248-65', '1993-12-5', 'alvarinho_chama@gmail.com','(18) 99858-1665'),
+('Victor Hugo Mazzarotti', '778.686.312-28', '1981-06-26', 'vitao_mazza81@yahoo.com.br', '(31) 98731-6687'),
+('Roseli Ganzerousi', '158.930.148-33', '1988-02-13', 'roseli.ganzer@hotmail.com', '(41) 93683-7673'),
+('James Campos', '825.696.644-41', '1973-08-03', 'james_dometal@gmail.com', '(11) 91286-7411'),
+('Antônio Pimentel', '189.425.35-517', '1992-11-01', 'toninho.picante@hotmail.com', '(19) 99658-2578'),
+('David Mustafa', '778.568.118-98', '1971-09-13', 'eusouodavi_59@gmail.com', '(11) 99244-5771'),
+('Alexandre Junior', '459.179.250-13', '2001-07-29', 'ale_juninho69@outlook.com', '(69) 97472-1567'),
+('Bruno Henrique Baptista', '863.768.158-98', '1995-03-15', 'bruno_baptistao95@yahoo.com.br', '(19) 99632-5862'),
+('Ana Letícia Machado', '292.813.498-23', '1999-08-31', 'aninhamachado99@hotmail.com', '(44) 97678-8531'),
+('Renata Duarte', '709.523.097-84', '1992-04-18', 'renataduarte92@hotmail.com', '(86) 93638-7721');
 
 /* Tabela Produto */
 insert into produto(codigo, marca, modelo, descricao, categoria) values
@@ -17,11 +17,11 @@ insert into produto(codigo, marca, modelo, descricao, categoria) values
 ('P64331952', 'Nike', 'Camisa Torcedor', 'Uniforme I PSG', 'Futebol'),
 ('P64751221', 'Nike', 'Precision IV', 'Tênis Masculino Basquete', 'Basquete'),
 ('P78643295', 'Adidas', 'Camisa Jogador', 'Uniforme II São Paulo', 'Futebol'),
-('P64582255', 'Nike', 'Air Max, Tênis Feminino Vôlei', 'Vôlei'),
-('P78312568', 'Adidas', 'Camisa Torcedor, Uniforme I Flamengo', 'Futebol'),
-('P31695478', 'Asics', 'Hypersprint, Sapatilha de Atletismo', 'Atletismo'),
+('P64582255', 'Nike', 'Air Max', 'Tênis Feminino Vôlei', 'Vôlei'),
+('P78312568', 'Adidas', 'Camisa Torcedor', 'Uniforme I Flamengo', 'Futebol'),
+('P31695478', 'Asics', 'Hypersprint', 'Sapatilha de Atletismo', 'Atletismo'),
 ('P11458629', 'Wilson', 'Pro Spin', 'Raquete de Tênis', 'Tênis'),
-('P58796692', 'Diadora', 'Camisa Torcedor, Uniforme I Vasco', 'Futebol'),
+('P58796692', 'Diadora', 'Camisa Torcedor', 'Uniforme I Vasco', 'Futebol'),
 ('P64878991', 'Nike', 'Camisa Jogador', 'Uniforme I Brasil', 'Futebol');
 
 /* Tabela Estoque */
@@ -123,28 +123,29 @@ insert into cupom_desconto(data_inicio, data_fim, porcent_desconto, descricao, i
 ('2019-03-10', '2019-12-05', 0.01,  'Patrocinio Twitch MolecularBroom',   'C55208459');
 
 /* Tabela Pedidos */
-insert into pedidos(tipo_pagamento, status_p, data_compra, numero_pedido, canal, id_log, cpf, cupom, cod_nf) values
-('Mastercard Crédito',  'Entregue', '2011-02-24', 27268, 'Ad Google',   'L17082037', 82569664441, 'C00000000', 16778383),
-('Boleto',              'Entregue', '2012-06-13', 27725, 'Catálogo',    'L20994072', 82569664441, 'C00000000', 97048119),
-('Visa Crédito',        'Entregue', '2012-10-05', 61384, 'Catálogo',    'L42828042', 77856811898, 'C80291531', 17922695),
-('Visa Crédito',        'Entregue', '2012-10-29', 51788, 'Ad YouTube',  'L58852021', 77856811898, 'C80291531', 48937195),
-('Mastercard Crédito',  'Entregue', '2014-04-01', 42162, 'Ad Facebook', 'L47981082', 46265824865, 'C00000000', 12221992),
-('Boleto',              'Entregue', '2014-12-11', 53227, 'Catálogo',    'L25712330', 46265824865, 'C00000000', 86189836),
-('Visa Crédito',        'Entregue', '2014-12-12', 27296, 'Ad Facebook', 'L41354335', 77868631228, 'C00000000', 33736423),
-('Boleto',              'Entregue', '2015-10-08', 51001, 'Catálogo',    'L79107798', 77868631228, 'C14225585', 34756092),
-('Boleto',              'Entregue', '2015-11-23', 21983, 'Ad Facebook', 'L22742350', 15893014833, 'C00000000', 91083500),
-('Mastercard Crédito',  'Entregue', '2016-04-07', 88215, 'Ad Google',   'L56026143', 15893014833, 'C36500543', 71643698),
-('Mastercard Crédito',  'Entregue', '2016-06-01', 64616, 'Ad Google',   'L78863263', 18942535517, 'C00000000', 72981887),
-('Caixa Débito',        'Entregue', '2017-01-18', 47139, 'Catálogo',    'L79395726', 18942535517, 'C36500543', 35224653),
-('Boleto',              'Entregue', '2017-03-07', 38073, 'Catálogo',    'L88493705', 86376815898, 'C36500543', 47537556),
-('Caixa Débito',        'Entregue', '2017-09-20', 66045, 'Ad Facebook', 'L43621353', 86376815898, 'C62535361', 40028922),
-('Visa Crédito',        'Entregue', '2018-06-06', 53851, 'Ad YouTube',  'L18113690', 70952309784, 'C00000000', 77555799),
-('Visa Crédito',        'Entregue', '2018-12-25', 67347, 'Ad YouTube',  'L12335491', 70952309784, 'C62535361', 27121981),
-('Boleto',              'Entregue', '2019-01-23', 83494, 'Ad YouTube',  'L61049032', 45917925013, 'C00000000', 85033826),
-('Boleto',              'Entregue', '2019-05-31', 20023, 'Catálogo',    'L44688078', 45917925013, 'C00000000', 71729708),
-('Caixa Débito',        'Entregue', '2019-06-14', 16401, 'Ad Facebook', 'L78021565', 29281349823, 'C41534475', 10779373),
-('Mastercard Crédito',  'Entregue', '2020-04-24', 79300, 'Ad Google',   'L25240702', 29281349823, 'C00000000', 23234603);
+insert into pedido(tipo_pagamento, status_p, data_compra, numero_pedido, canal, id_log, cpf, cupom, cod_nf) values
+('Mastercard Crédito',  'Entregue', '2011-02-24', 27268, 'Ad Google',   'L17082037', '825.696.644-41', 'C00000000', 16778383),
+('Boleto',              'Entregue', '2012-06-13', 27725, 'Catálogo',    'L20994072', '825.696.644-41', 'C00000000', 97048119),
+('Visa Crédito',        'Entregue', '2012-10-05', 61384, 'Catálogo',    'L42828042', '778.568.118-98', 'C80291531', 17922695),
+('Visa Crédito',        'Entregue', '2012-10-29', 51788, 'Ad YouTube',  'L58852021', '778.568.118-98', 'C80291531', 48937195),
+('Mastercard Crédito',  'Entregue', '2014-04-01', 42162, 'Ad Facebook', 'L47981082', '462.658.248-65', 'C00000000', 12221992),
+('Boleto',              'Entregue', '2014-12-11', 53227, 'Catálogo',    'L25712330', '462.658.248-65', 'C00000000', 86189836),
+('Visa Crédito',        'Entregue', '2014-12-12', 27296, 'Ad Facebook', 'L41354335', '778.686.312-28', 'C00000000', 33736423),
+('Boleto',              'Entregue', '2015-10-08', 51001, 'Catálogo',    'L79107798', '778.686.312-28', 'C14225585', 34756092),
+('Boleto',              'Entregue', '2015-11-23', 21983, 'Ad Facebook', 'L22742350', '158.930.148-33', 'C00000000', 91083500),
+('Mastercard Crédito',  'Entregue', '2016-04-07', 88215, 'Ad Google',   'L56026143', '158.930.148-33', 'C36500543', 71643698),
+('Mastercard Crédito',  'Entregue', '2016-06-01', 64616, 'Ad Google',   'L78863263', '189.425.355-17', 'C00000000', 72981887),
+('Caixa Débito',        'Entregue', '2017-01-18', 47139, 'Catálogo',    'L79395726', '189.425.355-17', 'C36500543', 35224653),
+('Boleto',              'Entregue', '2017-03-07', 38073, 'Catálogo',    'L88493705', '863.768.158-98', 'C36500543', 47537556),
+('Caixa Débito',        'Entregue', '2017-09-20', 66045, 'Ad Facebook', 'L43621353', '863.768.158-98', 'C62535361', 40028922),
+('Visa Crédito',        'Entregue', '2018-06-06', 53851, 'Ad YouTube',  'L18113690', '709.523.097-84', 'C00000000', 77555799),
+('Visa Crédito',        'Entregue', '2018-12-25', 67347, 'Ad YouTube',  'L12335491', '709.523.097-84', 'C62535361', 27121981),
+('Boleto',              'Entregue', '2019-01-23', 83494, 'Ad YouTube',  'L61049032', '459.179.250-13', 'C00000000', 85033826),
+('Boleto',              'Entregue', '2019-05-31', 20023, 'Catálogo',    'L44688078', '459.179.250-13', 'C00000000', 71729708),
+('Caixa Débito',        'Entregue', '2019-06-14', 16401, 'Ad Facebook', 'L78021565', '292.813.498-23', 'C41534475', 10779373),
+('Mastercard Crédito',  'Entregue', '2020-04-24', 79300, 'Ad Google',   'L25240702', '292.813.498-23', 'C00000000', 23234603);
 
+/* Tabela Endereços*/
 insert into enderecos(id_endereco, nome_rua, numero_rua, complemento, bairro, cidade, estado) values
 ('D61893511', 'Rua Amador Franco da Silveira', 56,    '--',   'Jardim Bela Vista',  'Pacaembu',          'São Paulo'),
 ('D90610006', 'Rua Domingos de Callistas',     345,	  '41A',  'Vila Pinheiros',     'São Paulo',         'São Paulo'),
@@ -157,6 +158,7 @@ insert into enderecos(id_endereco, nome_rua, numero_rua, complemento, bairro, ci
 ('D74125883', 'Avenida Ângelo Bruno',          567,   '23E',  'Centro',             'Campinas',          'São Paulo'),
 ('D65740147', 'Avenida Prudente de Moraes',    266,   '--',   'Centro',             'Pirassununga',      'São Paulo');
 
+/* Tabela Cliente possui endereços*/
 insert into cliente_possui_enderecos(cpf, id) values
 (46265824865, 'D61893511'),
 (77868631228, 'D25779766'),
@@ -169,7 +171,7 @@ insert into cliente_possui_enderecos(cpf, id) values
 (29281349823, 'D72461898'),
 (70952309784, 'D49794402');
 
-
+/*Tabela Pedido refere ao Produto*/
 insert into pedido_refereao_produto(npedido, codigo) values
 (27268,	'P78312568'),
 (27725,	'P78312568'),
