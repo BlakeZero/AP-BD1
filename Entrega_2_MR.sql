@@ -1,10 +1,8 @@
+drop table if exists pedido_refereao_produto;
+drop table if exists cliente_possui_enderecos;
 drop table if exists pedido;
 drop table if exists retirada;
 drop table if exists entrega;
-drop table if exists cliente_possui_enderecos;
-drop table if exists pedido_possui_cupomdesconto;
-drop table if exists pedido_refereao_produto;
-drop table if exists produto_tem_estoque;
 drop table if exists estoque;
 drop table if exists cliente;
 drop table if exists produto;
@@ -16,7 +14,7 @@ drop table if exists nota_fiscal;
 
 create table cliente(
     nome varchar(200),
-    cpf integer primary key,
+    cpf varchar(20) primary key,
     data_nasc date,
     email varchar(200),
     telefone varchar(200)
@@ -27,7 +25,7 @@ create table produto(
     marca varchar(200),
     modelo varchar(200),
     descricao varchar(200),
-    categoria varchar(200),
+    categoria varchar(200)
 );
 
 create table estoque(
@@ -78,7 +76,7 @@ create table cupom_desconto(
     data_fim date,
     porcent_desconto float,
     descricao varchar(200),
-    id integer primary key
+    id varchar(15) primary key
 );
 
 create table pedido(
@@ -88,11 +86,11 @@ create table pedido(
     numero_pedido integer primary key,
     canal varchar(200),
     
-    id_log integer,
-    cpf integer,
+    id_log varchar(15),
+    cpf varchar(20),
     cod_nf integer,
-    cupom integer,
-
+    cupom varchar(15),
+    
     foreign key (id_log) references logistica(id),
     foreign key (cpf) references cliente(cpf),
     foreign key (cod_nf) references nota_fiscal(codigo),
@@ -100,7 +98,7 @@ create table pedido(
 );
 
 create table enderecos(
-    id_endereco integer primary key,
+    id_endereco varchar(15) primary key,
     nome_rua varchar(200),
     numero_rua integer,
     complemento varchar(10),
@@ -110,8 +108,8 @@ create table enderecos(
 );
 
 create table cliente_possui_enderecos(
-    cpf integer,
-    id integer,
+    cpf varchar(20),
+    id varchar(15),
     primary key(cpf, id),
 
     foreign key (cpf) references cliente (cpf),
@@ -120,7 +118,7 @@ create table cliente_possui_enderecos(
 
 create table pedido_refereao_produto(
     npedido integer,
-    codigo integer,
+    codigo varchar(15),
     primary key(npedido,codigo),
 
     foreign key (npedido) references pedido (numero_pedido),
